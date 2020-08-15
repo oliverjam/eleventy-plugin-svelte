@@ -19,5 +19,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "uvu": "^0.3.3"
+  },
+  "prettier": {
+    "svelteSortOrder": "scripts-markup-styles"
   }
 }

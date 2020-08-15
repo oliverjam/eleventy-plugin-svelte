@@ -6,15 +6,15 @@
   import Title from "./_includes/Title.svelte";
 </script>
 
-<style>
-  p {
-    color: rebeccapurple;
-  }
-</style>
-
 <svelte:head>
   <title>Test</title>
 </svelte:head>
 
 <Title>Hello world</Title>
 <p>lorem ipsum</p>
+
+<style>
+  p {
+    color: rebeccapurple;
+  }
+</style>
