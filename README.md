@@ -1,6 +1,8 @@
 # Eleventy Plugin Svelte
 
-Use Svelte to write Eleventy templates. Very much a work in progress.
+Use Svelte to write Eleventy templates. Get all the benefits of Svelte's great developer-experience, including a nice templating language and same-file scoped CSS, but for your static websites.
+
+⚠️ **Very much a work in progress** ⚠️
 
 ## Installation
 
