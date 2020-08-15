@@ -19,9 +19,19 @@ Write your page templates as Svelte components. Whatever HTML the component rend
 
 Set Eleventy data (e.g. layouts) using [Svelte's `<script context="module">`](https://github.com/11ty/eleventy/issues/117).
 
+```svelte
+<!-- index.svelte -->
+<script context="module">
+  export const data = { layout: "layouts/base.njk" };
+</script>
+
+<h1>Hello world</h1>
+```
+
 This plugin will extract any CSS from the component's `<style>` tags and any head contents from its `<svelte:head>` tags. These are made available for you to use in layouts via Eleventy filters named: `getSvelteCssForPage` and `getSvelteHeadForPage`. For example:
 
 ```njk
+<!-- _includes/layouts/base.njk -->
 <!doctype html>
 <html>
   <head>
