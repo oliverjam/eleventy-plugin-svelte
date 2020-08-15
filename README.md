@@ -17,6 +17,15 @@ npm install @oliverjam/eleventy-plugin-svelte
 
 See the `example/` directory for a full code sample.
 
+First add install this plugin, then import it and add it to your config in `.eleventy.js`.
+
+```js
+const pluginSvelte = require("@oliverjam/eleventy-plugin-svelte");
+module.exports = (eleventyConfig) => {
+  eleventyConfig.addPlugin(pluginSvelte);
+};
+```
+
 Write your page templates as Svelte components. Whatever HTML the component renders will be used as the contents of the template.
 
 Set Eleventy data (e.g. layouts) using [Svelte's `<script context="module">`](https://github.com/11ty/eleventy/issues/117).
@@ -46,6 +55,23 @@ This plugin will extract any CSS from the component's `<style>` tags and any hea
     {{content | safe}}
   </body>
 </html>
+```
+
+### Svelte data cascade
+
+Your Svelte components can access all Eleventy data via props. Export the keys you want to access in a script tag.
+
+```svelte
+<!-- index.svelte -->
+<script>
+  export collections;
+</script>
+
+<ul>
+  {#each collections.blog as post}
+    <li>{post.data.title}</li>
+  {/each}
+</ul>
 ```
 
 ## Client-side components
