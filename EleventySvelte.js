@@ -64,13 +64,14 @@ class EleventySvelte {
         return typeof permalink === "function" ? permalink(data) : permalink;
       }
       const Component = require(path.join(process.cwd(), inputPath)).default;
-      const { html, css, head } = Component.render({
-        data,
-      });
+      const { html, css, head } = Component.render(data);
       this.setStyles(data.page.url, css.code);
       this.setHead(data.page.url, head);
       return html;
     };
+  }
+  getComponent(inputPath) {
+    return require(path.join(process.cwd(), inputPath));
   }
   reset() {
     this.styleManager.reset();

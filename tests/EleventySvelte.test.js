@@ -7,13 +7,12 @@ test("EleventySvelte renders HTML, CSS & head contents", () => {
   const eleventySvelte = new EleventySvelte();
   const renderFn = eleventySvelte.compile(null, "./example/index.svelte");
 
-  const html = renderFn({ page: { url: "/" } });
-  assert.snapshot(
-    html.trim(),
-    `<h1 class="svelte-1qq4xcd">Hello world</h1>
-<p class="svelte-i3d9lk">lorem ipsum</p>`,
-    "Renders HTML from .svelte file"
-  );
+  const data = { page: { url: "/" }, site: { author: "oli" } };
+  const html = renderFn(data);
+  const expected = `<h1 class="svelte-1qq4xcd">Hello world
+</h1>
+<p class="svelte-i3d9lk">by oli</p>`;
+  assert.snapshot(html.trim(), expected, "Renders HTML from .svelte file");
 
   const css = eleventySvelte.getStyles("/");
   assert.snapshot(

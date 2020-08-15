@@ -4,6 +4,8 @@
 
 <script>
   import Title from "./_includes/Title.svelte";
+
+  export let site;
 </script>
 
 <svelte:head>
@@ -11,7 +13,7 @@
 </svelte:head>
 
 <Title>Hello world</Title>
-<p>lorem ipsum</p>
+<p>by {site.author}</p>
 
 <style>
   p {

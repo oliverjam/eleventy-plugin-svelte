@@ -1,4 +1,3 @@
-const path = require("path");
 const EleventySvelte = require("./EleventySvelte");
 
 function sveltePlugin(config) {
@@ -6,6 +5,7 @@ function sveltePlugin(config) {
 
   config.addFilter("getSvelteCssForPage", eleventySvelte.getStyles);
   config.addFilter("getSvelteHeadForPage", eleventySvelte.getHead);
+
   // runs on subsequent builds after initial
   // stops duplicate CSS piling up
   config.on("beforeWatch", () => {
@@ -16,9 +16,7 @@ function sveltePlugin(config) {
   config.addExtension("svelte", {
     read: false,
     getData: true,
-    getInstanceFromInputPath: (inputPath) => {
-      return require(path.join(process.cwd(), inputPath));
-    },
+    getInstanceFromInputPath: eleventySvelte.getComponent,
     compile: eleventySvelte.compile,
   });
 }
