@@ -1,15 +1,27 @@
 {
   "name": "@oliverjam/eleventy-plugin-svelte",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Use Svelte components as Eleventy templates",
+  "main": ".eleventy.js",
   "scripts": {
     "dev": "ELEVENTY_EXPERIMENTAL=true eleventy --input=example --serve",
     "test": "uvu tests"
   },
-  "keywords": [],
+  "keywords": [
+    "eleventy",
+    "eleventy-plugin",
+    "svelte"
+  ],
   "author": "Oliver Phillips <hello@oliverjam.es> (https://oliverjam.es)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliverjam/eleventy-plugin-svelte.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oliverjam/eleventy-plugin-svelte/issues"
+  },
+  "homepage": "https://github.com/oliverjam/eleventy-plugin-svelte#readme",
   "dependencies": {
     "svelte": "^3.24.1"
   },
